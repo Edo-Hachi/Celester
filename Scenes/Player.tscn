@@ -1,0 +1,35 @@
+[gd_scene load_steps=13 format=3 uid="uid://cr830aokennsi"]
+
+[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_g50qf"]
+[ext_resource type="Texture2D" path="res://Assets/Player/adventurer-idle-00.png" id="1_u3h55"]
+[ext_resource type="Texture2D" path="res://Assets/Player/adventurer-idle-01.png" id="2_m4io3"]
+[ext_resource type="Texture2D" path="res://Assets/Player/adventurer-idle-02.png" id="3_0cc6h"]
+[ext_resource type="Texture2D" path="res://Assets/Player/adventurer-idle-03.png" id="4_aqx10"]
+[ext_resource type="Texture2D" uid="uid://r4kmu5bdug8m" path="res://Assets/Player/adventurer-run-00.png" id="6_dcxm4"]
+[ext_resource type="Texture2D" uid="uid://b3myx0t7efcxm" path="res://Assets/Player/adventurer-run-01.png" id="7_gcd2q"]
+[ext_resource type="Texture2D" uid="uid://ccgnesd214wig" path="res://Assets/Player/adventurer-run-02.png" id="8_q6q8o"]
+[ext_resource type="Texture2D" uid="uid://cmgyt08vnsh6p" path="res://Assets/Player/adventurer-run-03.png" id="9_4fivc"]
+[ext_resource type="Texture2D" uid="uid://bd4vralfrsndn" path="res://Assets/Player/adventurer-run-04.png" id="10_y6dbk"]
+[ext_resource type="Texture2D" uid="uid://ch50mhpgyjspe" path="res://Assets/Player/adventurer-run-05.png" id="11_6e4xu"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vqxy6"]
+animations = [{
+"frames": [ExtResource("1_u3h55"), ExtResource("2_m4io3"), ExtResource("3_0cc6h"), ExtResource("4_aqx10")],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [ExtResource("6_dcxm4"), ExtResource("7_gcd2q"), ExtResource("8_q6q8o"), ExtResource("9_4fivc"), ExtResource("10_y6dbk"), ExtResource("11_6e4xu")],
+"loop": true,
+"name": &"Run",
+"speed": 10.0
+}]
+
+[node name="Player" type="Node2D"]
+script = ExtResource("1_g50qf")
+
+[node name="AnimatedSprite2d" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+frames = SubResource("SpriteFrames_vqxy6")
+animation = &"Run"
+playing = true
